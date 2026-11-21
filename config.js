@@ -4,8 +4,8 @@
 //        Service Worker が通知の中身を取りに行く先（doPost pushInbox）
 //   APP_ORIGIN：会計アプリの画面が動く場所（この場所からのメッセージだけを受け付ける）
 self.KAIKEI = {
-  APP: 'https://script.google.com/a/~/macros/s/TEST_DEPLOY_ID/exec',
-  API: 'https://script.google.com/macros/s/TEST_DEPLOY_ID/exec',
+  APP: 'https://script.google.com/a/~/macros/s/AKfycbzgbQ-vzL__7ypAaGkwarred1OK0d42Bli5TTIZR8Cp6Fv4r6VULLgfICdopVilCXQ2/exec',
+  API: 'https://script.google.com/macros/s/AKfycbzgbQ-vzL__7ypAaGkwarred1OK0d42Bli5TTIZR8Cp6Fv4r6VULLgfICdopVilCXQ2/exec',
   // NS：端末に残すもの（ログインなど）を本番と分ける名前。本番の入口では付けない
   NS: 'test',
   APP_ORIGIN: /^https:\/\/[a-z0-9-]+-script\.googleusercontent\.com$/,
