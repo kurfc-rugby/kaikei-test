@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KURFC 会計（テスト）</title>
+<meta name="theme-color" content="#6f3036">
+<meta name="robots" content="noindex">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="会計テスト">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>
+  html, body { margin: 0; height: 100%; background: #6f3036; overflow: hidden; }
+  body { font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif; color: #fff; }
+  #app { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: #f3efeb; opacity: 0; transition: opacity .25s ease; }
+  #app.ready { opacity: 1; }
+  #wait { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; background: linear-gradient(180deg, #7c383f, #60262c); transition: opacity .3s ease; }
+  #wait.gone { opacity: 0; pointer-events: none; }
+  #wait img { width: 112px; height: auto; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .3)); }
+  #wait p { margin: 18px 0 0; font-size: 14px; letter-spacing: .08em; opacity: .85; }
+  #wait .msg { max-width: 300px; margin: 14px auto 0; font-size: 13.5px; line-height: 1.7; letter-spacing: 0; opacity: 1; }
+  #wait button { margin-top: 16px; border: 1px solid rgba(255, 255, 255, .8); background: transparent; color: #fff; border-radius: 999px; padding: 9px 22px; font: inherit; font-size: 14px; cursor: pointer; }
+  #upd { position: fixed; left: 50%; top: calc(env(safe-area-inset-top, 0px) + 10px); transform: translateX(-50%); z-index: 5; display: flex; align-items: center; gap: 4px; max-width: calc(100% - 24px); box-sizing: border-box; padding: 6px 6px 6px 16px; border-radius: 999px; background: #6f3036; color: #fff; font-size: 13.5px; box-shadow: 0 6px 20px rgba(60, 20, 24, .35); white-space: nowrap; }
+  #upd button { border: 0; background: transparent; color: #fff; font: inherit; cursor: pointer; border-radius: 999px; padding: 7px 10px; }
+  #upd #updGo { background: #fff; color: #6f3036; font-weight: 700; padding: 7px 14px; margin-left: 6px; }
+  #upd #updX { font-size: 17px; line-height: 1; padding: 6px 9px; opacity: .85; }
+  #upd button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  [hidden] { display: none !important; }
+  @media (prefers-reduced-motion: reduce) { #app, #wait { transition: none; } }
+</style>
+</head>
+<body>
+<div id="wait" role="status">
+  <div>
+    <img src="icons/crest-240.png" alt="KURFC">
+    <p id="waitText">KURFC 会計（テスト）</p>
+    <p class="msg" id="waitMsg" hidden></p>
+    <button type="button" id="retry" hidden>もう一度読み込む</button>
+  </div>
+</div>
+<div id="upd" role="status" hidden><span>新しい版を受け取りました</span><button type="button" id="updGo">切り替える</button><button type="button" id="updX" aria-label="閉じる">×</button></div>
+<iframe id="app" title="KURFC 会計" allow="camera; microphone; clipboard-read; clipboard-write; fullscreen; web-share"></iframe>
+<script src="config.js?v=1.1.0"></script>
+<script src="ui.js?v=1.1.0"></script>
+<script src="shell.js?v=1.1.0"></script>
+</body>
+</html>
